@@ -2,6 +2,13 @@
 
 Date::Date(int mois, int jour, int annee) : _mois(mois), _jour(jour), _annee(annee)
 {
+	std::cout << "Entrée la date du livre (Jour puis Mois puis Année)" << std::endl;
+	std::cin >> jour;
+	std::cin >> mois;
+	std::cin >> annee;
+	updateJour(jour);
+	updateMois(mois);
+	updateAnnee(annee);
 	bool status = isDate(mois, jour, annee);
 	assert(status && "La date n'est pas valide");
 }
@@ -53,7 +60,12 @@ bool Date::isDate(int mois, int jour, int annee)
 		return false;
 	if (mois == 2 || mois == 4 || mois == 6 || mois == 9 || mois == 11 && jour > 31)
 		return false;
-	if (annee < 0 || annee >2023) //chaud de faire du regex mais pas compris comment faire
+	if (annee < 0 || annee >2023) 
 		return false;
 	return true;
+}
+
+std::string toString(Date d)
+{
+	return std::to_string(d.jour())+"/"+std::to_string(d.mois()) + "/" + std::to_string(d.annee());
 }

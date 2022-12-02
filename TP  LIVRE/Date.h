@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
+#include <regex>
 
 
 
@@ -26,3 +27,5 @@ private :
 	
 };
 
+
+std::string toString(Date d);
