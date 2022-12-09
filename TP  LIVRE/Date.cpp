@@ -2,15 +2,16 @@
 
 Date::Date(int mois, int jour, int annee) : _mois(mois), _jour(jour), _annee(annee)
 {
-	std::cout << "Entrée la date du livre (Jour puis Mois puis Année)" << std::endl;
+	std::cout << "Entrez la date du livre (Jour puis Mois puis Année)" << std::endl;
 	std::cin >> jour;
 	std::cin >> mois;
 	std::cin >> annee;
+	bool status = isDate(mois, jour, annee);
+	assert(status && "La date n'est pas valide");
 	updateJour(jour);
 	updateMois(mois);
 	updateAnnee(annee);
-	bool status = isDate(mois, jour, annee);
-	assert(status && "La date n'est pas valide");
+	std::cout << toString((mois,jour,annee)) << std::endl; // faire la prochaine la ca m'énerve
 }
 
 int Date::mois()

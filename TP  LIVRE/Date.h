@@ -9,7 +9,6 @@
 class Date
 {
 public :
-	//Date() = default;
 	Date(int mois = 1, int jour = 1, int annee = 1);
 	int mois();
 	int jour();
