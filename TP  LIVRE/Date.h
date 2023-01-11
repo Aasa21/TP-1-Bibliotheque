@@ -16,15 +16,17 @@ public :
 	void updateMois(int mois);
 	void updateJour(int jour);
 	void updateAnnee(int annee);
+	bool isDate(int mois, int jour, int annee);
+	std::string toString(Date d);
 
 private :
 	int _mois;
 	int _jour;
 	int _annee;
-	bool isDate(int mois, int jour,int annee);
+	
 
 	
 };
 
 
-std::string toString(Date d);
+

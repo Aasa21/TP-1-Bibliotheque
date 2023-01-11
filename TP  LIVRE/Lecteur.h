@@ -7,10 +7,10 @@
 class Lecteur
 {
 public:
-	Lecteur(std::string nom="", std::string prenom="");
+	Lecteur();
 	std::string ID();
-	std::string nom();
-	std::string prenom();
+	std::string Nom();
+	std::string Prenom();
 	bool checkNom(std::string nom);
 	bool checkPrenom(std::string prenom);
 	void updateNom(std::string nom);
@@ -22,6 +22,8 @@ private:
 	std::string _prenom;
 	std::string _nom;
 	std::string _ID;
+	std::string prenom;
+	std::string nom;
 
 };
 

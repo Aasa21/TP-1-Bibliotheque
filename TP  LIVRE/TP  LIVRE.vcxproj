@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bibliotheque.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Emprunt.cpp" />
     <ClCompile Include="Lecteur.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bibliotheque.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Emprunt.h" />
     <ClInclude Include="Lecteur.h" />

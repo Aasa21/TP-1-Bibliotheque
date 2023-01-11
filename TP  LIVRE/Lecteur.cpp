@@ -1,13 +1,16 @@
 #include "Lecteur.h"
 
-livre livre2;
 
-Lecteur::Lecteur(std::string nom, std::string prenom)
+
+Lecteur::Lecteur()
 {
+	livre livre2;
 	std::cout << "Entrez votre nom" << std::endl;
 	std::cin >> nom;
 	std::cout << "Entrez votre prenom" << std::endl;
 	std::cin >> prenom;
+	updateNom(nom);
+	updatePrenom(prenom);
 	std::cout << "Votre nom d'utilisateur est " << ID() << std::endl;
 	_liste.push_back(livre2.ISBN());
 
@@ -19,12 +22,12 @@ std::string Lecteur::ID()
     return _ID;
 }
 
-std::string Lecteur::nom()
+std::string Lecteur::Nom()
 {
     return _nom;
 }
 
-std::string Lecteur::prenom()
+std::string Lecteur::Prenom()
 {
     return _prenom;
 }

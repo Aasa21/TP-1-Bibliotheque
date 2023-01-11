@@ -1,20 +1,13 @@
 #include "livre.h"
 
 
-livre::livre(std::string nomAuteur, std::string prenomAuteur, std::string langue, std::string genre,std::string titre)
+livre::livre(std::string nomAuteur,std::string titre)
 {
-	std::cout << "Entrez le nom de l'Auteur" << std::endl;
-	std::cin >> nomAuteur;
-	std::cout << "Entrez le prénom de l'Auteur" << std::endl;
-	std::cin >> prenomAuteur;
-	std::cout << "Entrez le titre du Livre" << std::endl;
-	std::cin >> titre;
 	std::cout << "Entrez la langue du livre" << std::endl;
 	std::cin >> langue;
 	std::cout << "Entrez le genre du livre" << std::endl;
 	std::cin >> genre;
 	updateTitre(titre);
-	updatePrenomAuteur(prenomAuteur);
 	updateNomAuteur(nomAuteur);
 	updateGenre(genre);
 	updateLangue(langue);
@@ -25,13 +18,6 @@ void livre::updateTitre(std::string titre)
 	_titre = titre;
 }
 
-void livre::updatePrenomAuteur(std::string prenomAuteur)
-{
-	if (checkPrenomAuteur(prenomAuteur) == true)
-		_PrenomAuteur = prenomAuteur;
-	else
-		std::cout << "Le prénom de l'auteur n'est pas valide" << std::endl;
-}
 
 void livre::updateNomAuteur(std::string nomAuteur)
 {
@@ -69,12 +55,8 @@ std::string livre::nomAuteur()
 	return _NomAuteur;
 }
 
-std::string livre::prenomAuteur()
-{
-	return _PrenomAuteur;
-}
 
-std::string livre::genre()
+std::string livre::Genre()
 {
 	return _genre;
 }
@@ -84,23 +66,12 @@ int livre::ISBN()
 	return _ISBN;
 }
 
-std::string livre::langue()
+std::string livre::Langue()
 {
 	return _langue;
 }
 
 
-bool livre::checkPrenomAuteur(std::string PrenomAuteur)
-{
-	std::locale loc;
-	for (std::string::iterator i=PrenomAuteur.begin(); i!=PrenomAuteur.end();i++)
-	{
-		if (std::isalpha(*i, loc))
-			return true;
-		else
-			return false;
-	}
-}
 
 bool livre::checkNomAuteur(std::string NomAuteur)
 {
@@ -136,6 +107,11 @@ bool livre::checkGenre(std::string genre)
 		else
 			return false;
 	}
+}
+
+bool livre::LivreDisponible(bool livreDisponible)
+{
+	return livreDisponible;
 }
 
 
