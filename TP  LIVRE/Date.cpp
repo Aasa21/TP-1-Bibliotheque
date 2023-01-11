@@ -52,7 +52,6 @@ void Date::updateAnnee(int annee)
 
 bool Date::isDate(int mois, int jour, int annee)
 {
-	//chaud de faire aussi avec le jour et mois et annee actuelle
 	if (jour <= 0 || jour > 31)
 		return false;
 	if (mois <= 0 || mois > 12)
