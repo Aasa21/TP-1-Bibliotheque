@@ -17,7 +17,7 @@ public :
 	void updateJour(int jour);
 	void updateAnnee(int annee);
 	bool isDate(int mois, int jour, int annee);
-	std::string toString(Date d);
+	
 
 private :
 	int _mois;
@@ -28,5 +28,5 @@ private :
 	
 };
 
-
+std::string toString(Date d);
 
