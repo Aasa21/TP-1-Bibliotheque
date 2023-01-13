@@ -64,5 +64,5 @@ bool Date::isDate(int mois, int jour, int annee)
 
 std::string toString(Date date)
 {
-	return std::to_string(date.jour)+"/"+std::to_string(date.mois) + "/" + std::to_string(date.annee);
+	return std::to_string(date._jour)+"/"+std::to_string(date._mois) + "/" + std::to_string(date._annee);
 }
