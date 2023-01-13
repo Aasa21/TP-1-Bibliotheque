@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
-#include <regex>
+
 
 
 
@@ -17,16 +17,16 @@ public :
 	void updateJour(int jour);
 	void updateAnnee(int annee);
 	bool isDate(int mois, int jour, int annee);
+	int _jour;
+	int _mois;
+	int _annee;
 	
 
 private :
-	int _mois;
-	int _jour;
-	int _annee;
 	
 
 	
 };
 
-std::string toString(Date d);
+std::string toString(Date date);
 

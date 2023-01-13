@@ -7,12 +7,12 @@
 class Lecteur
 {
 public:
-	Lecteur();
+	Lecteur(std::string nom="", std::string prenom="");
 	std::string ID();
 	std::string Nom();
 	std::string Prenom();
-	bool checkNom(std::string nom);
-	bool checkPrenom(std::string prenom);
+	//bool checkNom(std::string nom);
+	//bool checkPrenom(std::string prenom);
 	void updateNom(std::string nom);
 	void updatePrenom(std::string prenom);
 

@@ -7,7 +7,6 @@ Date::Date(int mois, int jour, int annee) : _mois(mois), _jour(jour), _annee(ann
 	updateJour(jour);
 	updateMois(mois);
 	updateAnnee(annee);
-	//std::cout << toString((mois,jour,annee)) << std::endl; // faire la prochaine la ca m'énerve répète en boucle
 }
 
 int Date::mois()
@@ -63,7 +62,7 @@ bool Date::isDate(int mois, int jour, int annee)
 	return true;
 }
 
-std::string toString(Date d)
+std::string toString(Date date)
 {
-	return std::to_string(d.jour())+"/"+std::to_string(d.mois()) + "/" + std::to_string(d.annee());
+	return std::to_string(date.jour)+"/"+std::to_string(date.mois) + "/" + std::to_string(date.annee);
 }

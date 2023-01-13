@@ -1,47 +1,55 @@
 #include "Emprunt.h"
 
-Lecteur lecteur1;
+#include "Lecteur.h"
+#include "Livre.h"
+#include "Date.h"
 
 
-
-Emprunt::Emprunt(std::string ID, std::string Livre, std::string auteur, int jour, int mois, int annee)
+Emprunt::Emprunt(Livre &livre, Lecteur &lecteur, Date &date)
 {
-	Date date1;
-	livre livre1;
-	Lecteur lecteur1;
-	livre1.livre::livre(auteur, Livre);
-	livre1.LivreDisponible(false);
-	date1.Date::Date(mois, jour, annee);
-	dateEmpruntDebut(jour, mois, annee);
-	std::cout << "Entrez le nom du lecteur" << std::endl;
-	dateEmpruntFin(jour, mois, annee);
-
-	
-}
-
-std::string Emprunt::dateEmpruntDebut(int jour,int mois,int annee)
-{
-	Date date1;
-	
-	date1.Date::Date(mois, jour, annee);
-	return date1.toString((mois, jour, annee));
-}
-
-std::string Emprunt::dateEmpruntFin(int jour, int mois, int annee)
-{
-	Date date1;
-	
-	jour = jour + 14;
-	if (date1.isDate(mois, jour, annee) == false)
+	dateEmpruntFin(date);
+	if (livre.disponible == true)
 	{
-		jour = jour - 30;
-		mois = mois + 1;
-		if (date1.isDate(mois, jour, annee) == false)
-		{
-			mois = mois - 12;
-			annee = annee + 1;
-		}
-		return date1.toString((mois, jour, annee));
+		_livre = livre;
+		_lecteur = lecteur;
+		_date = date;
+		std::cout << "La date de début d'emprunt est " << dateEmpruntDebut(date) << std::endl;
+		std::cout << "La date de fin d'emprunt est " << dateEmpruntFin(date) << std::endl;
+		
 	}
-	else return date1.toString((mois, jour, annee));
+	else if (jourFin == date._jour && moisFin == date._mois && anneeFin == date._annee && livre.disponible == false)
+	{
+		_livre = livre;
+		_lecteur = lecteur;
+		_date = date;
+		std::cout << "La date de début d'emprunt est " << dateEmpruntDebut(date) << std::endl;
+		std::cout << "La date de fin d'emprunt est " << dateEmpruntFin(date) << std::endl;
+	}
+	else
+	{
+		std::cout << "Le livre n'est pas disponible" << std::endl;
+	}
+}
+
+std::string Emprunt::dateEmpruntDebut(Date date)
+{
+	date.Date::Date(date._mois, date._jour, date._annee);
+	return toString((date._mois, date._jour, date._annee));
+}
+
+std::string Emprunt::dateEmpruntFin(Date date)
+{	
+	jourFin = date._jour + 14;
+	if (date.isDate(date._mois, date._jour, date._annee) == false)
+	{
+		jourFin = date._jour - 30;
+		moisFin = date._mois + 1;
+		if (date.isDate(date._mois, date._jour, date._annee) == false)
+		{
+			moisFin = date._mois - 12;
+			anneeFin = date._annee + 1;
+		}
+		return toString((moisFin, jourFin, anneeFin));
+	}
+	else return toString((date._mois, jourFin, date._annee));
 }

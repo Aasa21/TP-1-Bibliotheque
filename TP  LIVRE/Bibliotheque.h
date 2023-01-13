@@ -12,11 +12,11 @@ class Bibliotheque
 {
 public:
 	
-	Bibliotheque(std::string auteur = "", std::string livre="", int jour=1, int mois=1, int annee=1);
+	Bibliotheque(Livre &livre,Lecteur &lecteur,Date &date);
 	
 	
 private:
+	std::vector <Livre> _listeLivre;
 	
-	std::vector <livre> _listeLivre;
 };
 
