@@ -1,6 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Lecteur.h"
+#include "Livre.h"
+#include "Date.h"
+
+
 
 
 

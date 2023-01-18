@@ -9,6 +9,8 @@
 class Livre
 {
 public:
+	friend std::ostream& operator<<(std::ostream& os, const Livre& livre);
+	
 	Livre(std::string nomAuteur = "",std::string titre="", std::string langue="", std::string genre="", int ISBN=1);
 	void updateTitre(std::string titre);
 	void updateNomAuteur(std::string nomAuteur);
@@ -20,15 +22,13 @@ public:
 	std::string Genre();
 	int ISBN();
 	std::string Langue();
-	//bool checkNomAuteur(std::string NomAuteur);
-	//bool checkLangue(std::string langue);
-	//bool checkGenre(std::string genre);
+	bool checkNomAuteur(std::string NomAuteur);
+	bool checkLangue(std::string langue);
+	bool checkGenre(std::string genre);
 	void updateDisponible();
 	bool disponible = true;
 
 private:
-	std::string _langue;
-	std::string _genre;
 	std::string _titre;
 	std::string _NomAuteur;
 	std::string _genre;

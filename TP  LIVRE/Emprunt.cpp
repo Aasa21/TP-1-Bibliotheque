@@ -1,5 +1,4 @@
 #include "Emprunt.h"
-
 #include "Lecteur.h"
 #include "Livre.h"
 #include "Date.h"
