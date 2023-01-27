@@ -9,6 +9,7 @@
 int main()
 {
 	std::vector<Lecteur> listeLecteur;
+	
 	//Création des dates 
 	Date d1(1, 1, 2020);
 	Date d2(1, 1, 2021);
@@ -81,6 +82,7 @@ int main()
 
 
 	//Création des emprunts
+	// Je ne compred pas pourquoi quand je déclare les emprunts, il me dit que je suis out of range dans le xstring
 //	Emprunt e1(l1, le1, d1);
 //	Emprunt e4(l4, le1, d2);
 //	Emprunt e7(l7, le1, d1);

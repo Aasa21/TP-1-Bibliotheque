@@ -2,6 +2,7 @@
 
 Auteur::Auteur(std::string nomAuteur, std::string DateNaissance, int IdNum) :IdNum(IdNum), NomAuteur(nomAuteur), dateNaissance(DateNaissance)
 {
+	//Quand un auteur est créé on met a jour les variables
 	updateDateNaissance(DateNaissance);
 	updateIdNum(IdNum);
 	updateNomAuteur(nomAuteur);
@@ -10,16 +11,19 @@ Auteur::Auteur(std::string nomAuteur, std::string DateNaissance, int IdNum) :IdN
 
 void Auteur::updateNomAuteur(std::string nomAuteur)
 {
+	//Mise a jour du nom de l'auteur
 	_nomAuteur = nomAuteur;
 }
 
 void Auteur::updateDateNaissance(std::string DateNaissance)
 {
+	//Mise a jour de la date de naissance
 	_dateNaissance = DateNaissance;
 }
 
 void Auteur::updateIdNum(int IdNum)
 {
+	//Mise a jour de l'ID
 	_IdNum = IdNum;
 }
 

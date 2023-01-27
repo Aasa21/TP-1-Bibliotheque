@@ -12,6 +12,7 @@ Lecteur::Lecteur(std::string nom,std::string prenom)
 
 std::string Lecteur::ID()
 {
+	//Création de l'ID du lecteur
     _ID = _prenom.at(0);
     _ID += _nom;
     return _ID;
