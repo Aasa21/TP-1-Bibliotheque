@@ -6,14 +6,10 @@
 #include "Date.h"
 
 
-
-
-
-
 class Emprunt
 {
 public:
-	Emprunt(Livre &livre, Lecteur &lecteur, Date &date);
+	Emprunt(Livre& livre, Lecteur& lecteur, Date& date);
 	std::string dateEmpruntDebut(Date date);
 	std::string dateEmpruntFin(Date date);
 	int jourFin;

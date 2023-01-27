@@ -1,6 +1,6 @@
 #include "Date.h"
 
-Date::Date(int mois, int jour, int annee) : _mois(mois), _jour(jour), _annee(annee)
+Date::Date(int mois, int jour, int annee) : Mois(mois), Jour(jour), Annee(annee)
 {
 	bool status = isDate(mois, jour, annee);
 	assert(status && "La date n'est pas valide");
@@ -64,5 +64,5 @@ bool Date::isDate(int mois, int jour, int annee)
 
 std::string toString(Date date)
 {
-	return std::to_string(date._jour)+"/"+std::to_string(date._mois) + "/" + std::to_string(date._annee);
+	return std::to_string(date.Jour)+"/"+std::to_string(date.Mois) + "/" + std::to_string(date.Annee);
 }

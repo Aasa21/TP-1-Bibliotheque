@@ -6,7 +6,7 @@ Lecteur::Lecteur(std::string nom,std::string prenom)
 {
 	updateNom(nom);
 	updatePrenom(prenom);
-	std::cout << "Votre nom d'utilisateur est " << ID() << std::endl;
+	ID();
 	
 }
 

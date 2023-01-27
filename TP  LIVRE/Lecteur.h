@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "livre.h"
+#include <iostream>
 
 
 
@@ -11,6 +11,7 @@ class Lecteur
 public:
 	
 	friend std::ostream& operator<<(std::ostream& os, const Lecteur& lecteur);
+	
 	Lecteur(std::string nom="", std::string prenom="");
 	std::string ID();
 	std::string Nom();

@@ -1,13 +1,15 @@
 #include "Livre.h"
 
 
-Livre::Livre(std::string nomAuteur,std::string titre,std::string langue,std::string genre,int ISBN)
+Livre::Livre(Auteur auteur,std::string titre,std::string langue,std::string genre,int ISBN)
 {
 	updateTitre(titre);
-	updateNomAuteur(nomAuteur);
+	_auteur = auteur;
+	updateNomAuteur(_auteur);
 	updateGenre(genre);
 	updateLangue(langue);
 	updateISBN(ISBN);
+	
 }
 
 void Livre::updateTitre(std::string titre)
@@ -16,10 +18,10 @@ void Livre::updateTitre(std::string titre)
 }
 
 
-void Livre::updateNomAuteur(std::string nomAuteur)
+void Livre::updateNomAuteur(Auteur auteur)
 {
-	if (checkNomAuteur(nomAuteur) == true)
-		_NomAuteur = nomAuteur;
+	if (checkNomAuteur(auteur.NomAuteur) == true)
+		_NomAuteur = auteur.NomAuteur;
 	else
 		std::cout << "Le nom de l'auteur n'est pas valide" << std::endl;
 
@@ -38,6 +40,7 @@ void Livre::updateLangue(std::string langue)
 {
 	if (checkLangue(langue) == true)
 		_langue = langue;
+
 	else
 		std::cout << "La langue n'est pas valide" << std::endl;
 }
@@ -73,9 +76,9 @@ std::string Livre::Langue()
 	return _langue;
 }
 
-bool Livre::checkNomAuteur(std::string NomAuteur)
+bool Livre::checkNomAuteur(Auteur auteur)
 {
-	for (std::string::iterator i = NomAuteur.begin(); i != NomAuteur.end(); i++)
+	for (std::string::iterator i = auteur.NomAuteur.begin(); i != auteur.NomAuteur.end(); i++)
 	{
 		if (std::isalpha(*i))
 			return true;

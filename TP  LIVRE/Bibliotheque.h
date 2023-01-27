@@ -13,6 +13,7 @@ class Bibliotheque
 public:
 	
 	Bibliotheque(Livre &livre);
+	void ajouterLivre(Livre& livre);
 	
 	
 private:

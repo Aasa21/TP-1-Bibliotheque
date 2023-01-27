@@ -3,9 +3,6 @@
 #include <string>
 #include <cassert>
 
-
-
-
 class Date
 {
 public :
@@ -17,16 +14,14 @@ public :
 	void updateJour(int jour);
 	void updateAnnee(int annee);
 	bool isDate(int mois, int jour, int annee);
+	int Jour;
+	int Mois;
+	int Annee;
+	
+private :
 	int _jour;
 	int _mois;
 	int _annee;
-	
-
-private :
-	
-
-	
 };
-
 std::string toString(Date date);
 

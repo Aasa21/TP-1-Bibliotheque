@@ -2,8 +2,13 @@
 
 Bibliotheque::Bibliotheque(Livre &livre)
 {
-	_listeLivre.push_back(livre);
+	ajouterLivre(livre);
 
+}
+
+void Bibliotheque::ajouterLivre(Livre& livre)
+{
+	_listeLivre.push_back(livre);
 }
 
 

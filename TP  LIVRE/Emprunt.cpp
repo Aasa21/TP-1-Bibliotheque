@@ -4,7 +4,7 @@
 #include "Date.h"
 
 
-Emprunt::Emprunt(Livre &livre, Lecteur &lecteur, Date &date)
+Emprunt::Emprunt(Livre& livre, Lecteur& lecteur, Date& date)
 {
 	dateEmpruntFin(date);
 	if (livre.disponible == true)
@@ -16,7 +16,7 @@ Emprunt::Emprunt(Livre &livre, Lecteur &lecteur, Date &date)
 		std::cout << "La date de fin d'emprunt est " << dateEmpruntFin(date) << std::endl;
 		
 	}
-	else if (jourFin == date._jour && moisFin == date._mois && anneeFin == date._annee && livre.disponible == false)
+	else if (jourFin == date.Jour && moisFin == date.Mois && anneeFin == date.Annee && livre.disponible == false)
 	{
 		_livre = livre;
 		_lecteur = lecteur;
@@ -32,23 +32,25 @@ Emprunt::Emprunt(Livre &livre, Lecteur &lecteur, Date &date)
 
 std::string Emprunt::dateEmpruntDebut(Date date)
 {
-	date.Date::Date(date._mois, date._jour, date._annee);
-	return toString((date._mois, date._jour, date._annee));
+	Livre livre;
+	date.Date::Date(date.Mois, date.Jour, date.Annee);
+	livre.disponible = false;
+	return toString((date.Mois, date.Jour, date.Annee));
 }
 
 std::string Emprunt::dateEmpruntFin(Date date)
 {	
-	jourFin = date._jour + 14;
-	if (date.isDate(date._mois, date._jour, date._annee) == false)
+	jourFin = date.Jour + 14;
+	if (date.isDate(date.Mois, date.Jour, date.Annee) == false)
 	{
-		jourFin = date._jour - 30;
-		moisFin = date._mois + 1;
-		if (date.isDate(date._mois, date._jour, date._annee) == false)
+		jourFin = date.Jour - 30;
+		moisFin = date.Mois + 1;
+		if (date.isDate(date.Mois, date.Jour, date.Annee) == false)
 		{
-			moisFin = date._mois - 12;
-			anneeFin = date._annee + 1;
+			moisFin = date.Mois - 12;
+			anneeFin = date.Annee + 1;
 		}
 		return toString((moisFin, jourFin, anneeFin));
 	}
-	else return toString((date._mois, jourFin, date._annee));
+	else return toString((date.Mois, jourFin, date.Annee));
 }
